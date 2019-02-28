@@ -10,6 +10,7 @@ and missed deadlines.
 
 ## How we will assign (and reassign) tasks
 1. Work will be assigned during the weekly meetings in order to keep confusion to a minimum
+2. For reassignments a member will state why they can't do what they were assigned and we'll talk out how to fix it.
 
 
 ## How will we will track progress (and follow-up) on completion of tasks
@@ -20,7 +21,7 @@ and missed deadlines.
 
 ## How will communicate difficulties with a task assigned to us
 1. Utilize Slack to make other team members aware of the difficulties being had
-
+2. If no response from Slack we each have our phone numbers listed for direct communication
 
 ## How we will back up each other to ensure that deadlines are not missed
 1. Once the team has been made aware of work difficulties, one of the following will occur:
