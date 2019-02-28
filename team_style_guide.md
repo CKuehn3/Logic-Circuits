@@ -1,12 +1,14 @@
-# Team NN Style Guide
+# Team 06 Style Guide
 
-<brief description of your team's opinion or philosophy regarding Style Guides>
+The Team 06 Style Guide will allow any and all members of
+Team 06 to maintain coherency amongst all elements of the Logic Circuit Game
 
 See https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#code for markdown tips
 
 ## Naming conventions
 
-<brief statement describing your team's naming conventions>
+Names under the Team 06 Style Guide will be clear, concise, and in camel case (if multiple words).
+One should know the purpose of the element purely from the name.
 
 ### Examples
 * interfaces
