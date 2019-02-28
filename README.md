@@ -12,7 +12,7 @@
        * GitHub username 4: crebtheirken
        * GitHub username 5: Morkad
    * How long did it take your team to complete this exercise? 
-	   * Less than half an hour
+	   * A couple of hours
 
 ## Table of Contents
 1. TODO.md - contains instructions for what to do for this assignment
