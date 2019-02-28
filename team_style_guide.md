@@ -13,13 +13,15 @@ One should know the purpose of the element purely from the name.
 ### Examples
 * interfaces
 ```c#
-public interface ClassName {
+public interface ClassName 
+{
    // code example
 }
 ```
 * classes
 ```c#
-public class ClassName {
+public class ClassName 
+{
    // code example
 }
 ```
@@ -27,13 +29,15 @@ public class ClassName {
 * fields
 * methods
 ```c#
-public void printCoordinates(int x, int y){
+public void printCoordinates(int x, int y)
+{
    // code example
 }
 ```
 * parameters
 ```c#
-public void printCoordinates(int x, int y){
+public void printCoordinates(int x, int y)
+{
    // code example
 }
 ```
@@ -50,7 +54,8 @@ public void printCoordinates(int x, int y){
 * classes
 
 ```c#
-public class ClassName {
+public class ClassName 
+{
    // code example
 }
 ```
