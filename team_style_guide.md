@@ -92,13 +92,15 @@ public [class name]
   }
   ```
   * switch statement
+  
   * while loops
   ```c#
   while (i > x)
   {
    // enter code here
   }
-```
+  ```
+  
   * for loops
   ```c#
   for (int i = 0; i > x; i++)
