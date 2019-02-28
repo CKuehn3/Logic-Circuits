@@ -1,4 +1,4 @@
-# Team NN Rules
+# Team 06 Rules
 
 These rules establish how our team will assign tasks,
 track progress on each task, and communicate with each other 
@@ -9,23 +9,23 @@ and will hopefully lead to productive team work with fewer conflicts
 and missed deadlines.
 
 ## How we will assign (and reassign) tasks
-* task 1
-* task 2
+1. Work will be assigned during the weekly meetings in order to keep confusion to a minimum
 
 
 ## How will we will track progress (and follow-up) on completion of tasks
-* task 1
-* task 2
+1. Have in person meetings 1-2 times a week
+  * Constantly keep in touch on the TEAM06 Slack Channel
+2. Upon the completion of a task the Gantt Chart will be updated with the corresponding information
 
 
 ## How will communicate difficulties with a task assigned to us
-* task 1
-* task 2
+1. Utilize Slack to make other team members aware of the difficulties being had
 
 
 ## How we will back up each other to ensure that deadlines are not missed
-* task 1
-* task 2
+1. Once the team has been made aware of work difficulties, one of the following will occur:
+  * A team member will be assigned as back up
+  * The difficult work will be split amongst the team as a means to mitigate excess work
 
 
 
