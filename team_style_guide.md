@@ -29,7 +29,7 @@ One should know the purpose of the element purely from the name.
 
 * classes
 
-```java
+```c#
 public class ClassName {
    // code example
 }
