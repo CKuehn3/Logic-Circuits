@@ -70,7 +70,6 @@ public class ClassName
 }
 ```
 
-* fields
 * constructors
 ```c#
 public [class name]
@@ -78,7 +77,6 @@ public [class name]
    // enter code here
 }
 ```
-* methods
 * coding style (brackets, horizontal, and vertical spacing) for:
   * if statements
   ```c#
@@ -122,4 +120,3 @@ public [class name]
       // enter code here
   }
   ```
-  * enhanced for loops
