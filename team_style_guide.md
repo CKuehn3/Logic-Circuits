@@ -27,13 +27,13 @@ public class ClassName {
 * fields
 * methods
 ```c#
-**public void printCoordinates**(int x, int y){
+public void printCoordinates(int x, int y){
    // code example
 }
 ```
 * parameters
 ```c#
-public void printCoordinates(**int x, int y**){
+public void printCoordinates(int x, int y){
    // code example
 }
 ```
