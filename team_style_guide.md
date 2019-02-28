@@ -92,6 +92,20 @@ public [class name]
   }
   ```
   * switch statement
+  ```c# 
+  switch(cond)
+      {
+          case 1:
+              // enter code here
+              break;
+          case 2:
+              // enter code here
+              break;
+          default:
+              // enter code here
+              break;
+      }
+  ```
   
   * while loops
   ```c#
