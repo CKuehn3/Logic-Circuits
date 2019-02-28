@@ -22,6 +22,7 @@ and missed deadlines.
 ## How will communicate difficulties with a task assigned to us
 1. Utilize Slack to make other team members aware of the difficulties being had
 2. If no response from Slack we each have our phone numbers listed for direct communication
+3. Notify the team immediately on the day of the assignment of any known issues, constraints, or uncertainty before taking on the task.
 
 ## How we will back up each other to ensure that deadlines are not missed
 1. Once the team has been made aware of work difficulties, one of the following will occur:
