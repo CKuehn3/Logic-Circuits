@@ -9,19 +9,23 @@ and will hopefully lead to productive team work with fewer conflicts
 and missed deadlines.
 
 ## How we will assign (and reassign) tasks
-
+* task 1
+* task 2
 
 
 ## How will we will track progress (and follow-up) on completion of tasks
-
+* task 1
+* task 2
 
 
 ## How will communicate difficulties with a task assigned to us
-
+* task 1
+* task 2
 
 
 ## How we will back up each other to ensure that deadlines are not missed
-
+* task 1
+* task 2
 
 
 
