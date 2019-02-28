@@ -12,11 +12,31 @@ One should know the purpose of the element purely from the name.
 
 ### Examples
 * interfaces
+```c#
+public interface ClassName {
+   // code example
+}
+```
 * classes
+```c#
+public class ClassName {
+   // code example
+}
+```
 * exception types
 * fields
 * methods
+```c#
+**public void printCoordinates**(int x, int y){
+   // code example
+}
+```
 * parameters
+```c#
+public void printCoordinates(**int x, int y**){
+   // code example
+}
+```
 * local variables
 * instance constants
 * class constants
