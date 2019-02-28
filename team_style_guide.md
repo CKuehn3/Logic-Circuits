@@ -82,7 +82,7 @@ public [class name]
 * coding style (brackets, horizontal, and vertical spacing) for:
   * if statements
   ```c#
-  if
+  if (this == suffering)
   {
       // enter code here
   }
