@@ -54,7 +54,7 @@ int i;
 * **Functions:**
    * Will have a signature 
       * name : param1, param2, ... paramN -> return
-   * Will have a purpose statment
+   * Will have a purpose statement
 * **Variables:**
    * Will be self-documenting (for the most part)
    * Will have a brief description in-line with the variable declaration
