@@ -14,7 +14,7 @@ and missed deadlines.
 
 ## How will we will track progress (and follow-up) on completion of tasks
 1. Have in person meetings 1-2 times a week
-  * Constantly keep in touch on the TEAM06 Slack Channel
+    * Constantly keep in touch on the TEAM06 Slack Channel
 2. Upon the completion of a task the Gantt Chart will be updated with the corresponding information
 
 
@@ -24,8 +24,8 @@ and missed deadlines.
 
 ## How we will back up each other to ensure that deadlines are not missed
 1. Once the team has been made aware of work difficulties, one of the following will occur:
-  * A team member will be assigned as back up
-  * The difficult work will be split amongst the team as a means to mitigate excess work
+   * A team member will be assigned as back up
+   * The difficult work will be split amongst the team as a means to mitigate excess work
 
 
 
