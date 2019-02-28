@@ -42,6 +42,10 @@ public void printCoordinates(int x, int y)
 }
 ```
 * local variables
+```c#
+String str;
+int i;
+```
 * instance constants
 * class constants
 
@@ -68,10 +72,38 @@ public class ClassName
 
 * fields
 * constructors
+```c#
+public [class name]
+{
+   // enter code here
+}
+```
 * methods
 * coding style (brackets, horizontal, and vertical spacing) for:
   * if statements
+  ```c#
+  if
+  {
+      // enter code here
+  }
+  else
+  {
+      // enter code here
+  }
+  ```
   * switch statement
   * while loops
+  ```c#
+  while (i > x)
+  {
+   // enter code here
+  }
+```
   * for loops
+  ```c#
+  for (int i = 0; i > x; i++)
+  {
+      // enter code here
+  }
+  ```
   * enhanced for loops
