@@ -47,7 +47,13 @@ public void printCoordinates(int x, int y)
 
 ## Commenting style for public and private members of a class or interface:
 
-<brief statement of your team's commenting style>
+* **Functions:**
+   * Will have a signature 
+      * name : param1, param2, ... paramN -> return
+   * Will have a purpose statment
+* **Variables:**
+   * Will be self-documenting (for the most part)
+   * Will have a brief description in-line with the variable declaration
 
 ### Examples
 
