@@ -83,6 +83,7 @@
     <Compile Include="Assets\UI\Scripts\SpawnOnButtonClick.cs" />
     <Compile Include="Assets\UI\Scripts\TiltWindow.cs" />
     <Compile Include="Assets\UI\Scripts\Undo.cs" />
+    <Compile Include="Assets\UI\Scripts\Undo1.cs" />
     <Compile Include="Assets\UI\Scripts\UpdateAnd.cs" />
     <None Include="Assets\UI\Fonts\Jupiter\LICENSE.txt" />
     <None Include="Assets\UI\Textures and Sprites\SF UI\Background\LICENSE.txt" />
