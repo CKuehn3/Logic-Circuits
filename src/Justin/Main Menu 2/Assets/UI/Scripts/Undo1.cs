@@ -74,9 +74,16 @@ public class Undo1 : MonoBehaviour
         //Debug.Log(reStk.Count);
         if (reStk.Count != 0)
         {
-            undStk.Push(reStk.Pop()); 
-            GameObject go = undStk.Peek();
-            go.SetActive(true);
+            try
+            {
+                undStk.Push(reStk.Pop());
+                GameObject go = undStk.Peek();
+                go.SetActive(true);
+            }catch(System.Exception e)
+            {
+                Debug.Log("Can't pop off empty stack");
+            }
+            
             
         }
         else

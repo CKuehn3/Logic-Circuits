@@ -13,11 +13,11 @@ public class Undo : MonoBehaviour
 
 
     // Update is called once per frame
-    void Clear()
+    public void Clear()
     {
 
         GameObject[] allGates = GameObject.FindGameObjectsWithTag("Gates");
-
+        
         foreach(GameObject gate in allGates)
         {
             Destroy(gate);

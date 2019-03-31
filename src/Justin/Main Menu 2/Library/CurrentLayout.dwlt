@@ -116,7 +116,7 @@ MonoBehaviour:
   m_MinSize: {x: 913, y: 448}
   m_MaxSize: {x: 22008, y: 10024}
   vertical: 0
-  controlID: 2468
+  controlID: 1964
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_MinSize: {x: 202, y: 448}
   m_MaxSize: {x: 4002, y: 8048}
   vertical: 1
-  controlID: 2469
+  controlID: 1965
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -383,9 +383,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 652.50885, y: 308.9357, z: -15.329485}
+    m_Target: {x: 2.5580971, y: -0.33746922, z: -6.2929688}
     speed: 2
-    m_Value: {x: 652.50885, y: 308.9357, z: -15.329485}
+    m_Value: {x: 2.5580971, y: -0.33746922, z: -6.2929688}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -417,9 +417,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 913.9742
+    m_Target: 15.42461
     speed: 2
-    m_Value: 913.9742
+    m_Value: 15.42461
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -460,9 +460,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: d6fbffff2e0d0000660d0000
+      m_SelectedIDs: fcebffff
+      m_LastClickedID: -5124
+      m_ExpandedIDs: 2aeefffffa34000014350000283500004835000074350000cc350000e6350000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -524,11 +524,11 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/UI/Scripts
+    - Assets/UI/Prefabs
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/UI/Scripts
+  - Assets/UI/Prefabs
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\Users\Chase\Documents\ITEC 370\Logic-Circuits\src\Justin\Main
     Menu 2
@@ -536,9 +536,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 660a0000
-    m_LastClickedID: 2662
-    m_ExpandedIDs: 00000000a8090000a80a0000780b0000900c0000fc2a0000fe2a0000002b0000022b0000042b000000ca9a3b
+    m_SelectedIDs: e8320000
+    m_LastClickedID: 13032
+    m_ExpandedIDs: 000000009032000046330000d033000082340000a4360000a6360000a8360000aa360000ac36000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -566,7 +566,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000a8090000a80a0000780b0000900c0000fc2a0000fe2a0000002b0000022b0000042b000000ca9a3b
+    m_ExpandedIDs: 000000009032000046330000d033000082340000a4360000a6360000a8360000aa360000ac36000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -618,7 +618,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 1211.2}
+    m_ScrollPosition: {x: 0, y: 240}
     m_GridSize: 64
   m_DirectoriesAreaWidth: 110
 --- !u!114 &16
