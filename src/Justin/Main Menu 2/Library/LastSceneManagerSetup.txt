@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/UI/Scenes/WiredTruthPA.unity
+- path: Assets/UI/Scenes/Gate test.unity
   isLoaded: 1
   isActive: 1
