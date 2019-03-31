@@ -21,6 +21,7 @@ public class SpawnObjs: MonoBehaviour
             GameObject objectInstance = Instantiate(objectToSpawn, spawnPosition, Quaternion.Euler(new Vector3(0, 0, 0)));
             made = true;
             Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+            Destroy(GameObject.FindGameObjectWithTag("Spawner"));
         }
     }
 }

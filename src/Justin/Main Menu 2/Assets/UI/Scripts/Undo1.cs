@@ -6,41 +6,105 @@ using UnityEngine.UI;
 public class Undo1 : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField] private Button btn;
-    private Stack<GameObject> undStk = new Stack<GameObject>();
-    void Start()
+    //[SerializeField] private Button btn;
+    private Stack<GameObject> reStk;
+    private Stack<GameObject> undStk;
+
+    private void Start()
     {
-        btn.onClick.AddListener(undo);
-
+        reStk = new Stack<GameObject>();
+        undStk = new Stack<GameObject>();
     }
-
     // Update is called once per frame
     void Update()
     {
         GameObject[] allGates = GameObject.FindGameObjectsWithTag("Gates");
+        
+        
        // Debug.Log(allGates.Length);
         if(allGates.Length != 0)
         {
             for(int i = 0; i < allGates.Length; i++)
             {
-                undStk.Push(allGates[i]);
+                if (!undStk.Contains(allGates[i]))
+                {
+                    undStk.Push(allGates[i]);
+                }
+                
+                
             }
-            
 
+            
         }
         
 
+
     }
-    void undo()
+    public void undo()
     {
-        if (undStk.Count == 0)
+        if (undStk.Count != 0)
         {
-            Debug.Log("Can't pop off empty stack");
+            try
+            {
+                reStk.Push(undStk.Pop());
+                //Debug.Log(reStk.Count);
+                GameObject go = reStk.Peek();
+                go.SetActive(false);
+            }catch(System.Exception e)
+            {
+                Debug.Log("Can't pop off empty stack");
+            }
+            
         }
         else
         {
-            GameObject obj = undStk.Pop();
-            Destroy(obj);
+
+            Debug.Log("Can't pop off empty stack");
+            // Debug.Log(undStk.Count);
+            //Debug.Log(reStk.Count);
+            //Destroy(obj);
+
+
+        }
+    }
+    
+    public void redo()
+    {
+        
+        //Debug.Log(reStk.Count);
+        if (reStk.Count != 0)
+        {
+            undStk.Push(reStk.Pop()); 
+            GameObject go = undStk.Peek();
+            go.SetActive(true);
+            
+        }
+        else
+        {
+            Debug.Log("Can't pop off empty stack");
+
+            //undStk.Push(obj);
+
+
+        }
+    }
+    public void Clear()
+    {
+
+        GameObject[] allGates = GameObject.FindGameObjectsWithTag("Gates");
+
+        foreach (GameObject gate in allGates)
+        {
+            Destroy(gate);
+        }
+
+        for(int i = 0; i < undStk.Count; i++)
+        {
+            undStk.Pop();
+        }
+        for (int i = 0; i < reStk.Count; i++)
+        {
+            reStk.Pop();
         }
     }
 }
