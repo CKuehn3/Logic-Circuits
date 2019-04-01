@@ -6,15 +6,17 @@ public class SpawnObjs: MonoBehaviour
     public GameObject objectToSpawn;
     private bool made = false;
     // Use this for initialization
+    private Stack<GameObject> gos;
     void Start()
     {
-
+        gos = Undo1.getUndStk();
     }
 
     // Update is called once per frame
     void Update()
-    { 
-        if (Input.GetMouseButtonDown(0) && made == false)
+    {
+        gos = Undo1.getUndStk();
+        if (Input.GetMouseButtonDown(0) && made == false && gos.Count < 3)
         {
             Vector3 spawnPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             spawnPosition.z = 0.0f;
@@ -22,6 +24,11 @@ public class SpawnObjs: MonoBehaviour
             made = true;
             Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
             Destroy(GameObject.FindGameObjectWithTag("Spawner"));
+        }
+        else if(Input.GetMouseButtonDown(0) && gos.Count >= 3)
+        {
+            Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+            made = true;
         }
     }
 }

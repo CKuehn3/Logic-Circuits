@@ -7,8 +7,8 @@ public class Undo1 : MonoBehaviour
 {
     // Start is called before the first frame update
     //[SerializeField] private Button btn;
-    private Stack<GameObject> reStk;
-    private Stack<GameObject> undStk;
+    private static Stack<GameObject> reStk;
+    private static Stack<GameObject> undStk;
 
     private void Start()
     {
@@ -46,6 +46,7 @@ public class Undo1 : MonoBehaviour
         {
             try
             {
+                //overwrite();
                 reStk.Push(undStk.Pop());
                 //Debug.Log(reStk.Count);
                 GameObject go = reStk.Peek();
@@ -56,6 +57,7 @@ public class Undo1 : MonoBehaviour
             }
             
         }
+        
         else
         {
 
@@ -70,9 +72,9 @@ public class Undo1 : MonoBehaviour
     
     public void redo()
     {
-        
+
         //Debug.Log(reStk.Count);
-        if (reStk.Count != 0)
+        if (reStk.Count != 0 && !isFull())
         {
             try
             {
@@ -86,13 +88,10 @@ public class Undo1 : MonoBehaviour
             
             
         }
+        
         else
         {
             Debug.Log("Can't pop off empty stack");
-
-            //undStk.Push(obj);
-
-
         }
     }
     public void Clear()
@@ -113,5 +112,41 @@ public class Undo1 : MonoBehaviour
         {
             reStk.Pop();
         }
+    }
+
+    public static Stack<GameObject> getUndStk()
+    {
+        return undStk;
+    }
+
+    void overwrite()
+    {
+        if (reStk.Count == 3)
+        {
+            int diff = undStk.Count;
+            for(int i = 0; i < diff; i++)
+            {
+                Destroy(reStk.Pop());
+            }
+        }
+    }
+    bool isFull()
+    {
+        bool res = false;
+        int count = 0;
+        GameObject[] gos = GameObject.FindGameObjectsWithTag("Gates");
+        foreach(GameObject go in gos)
+        {
+            if (go.activeSelf)
+            {
+                count = count + 1;
+            }
+        }
+
+        if(count >= 3)
+        {
+            res = true;
+        }
+        return res;
     }
 }
