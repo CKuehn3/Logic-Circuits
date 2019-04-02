@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\DragHandler.cs" />
+     <Compile Include="Assets\DrawLine.cs" />
      <Compile Include="Assets\Scripts\ClickSound.cs" />
      <Compile Include="Assets\Scripts\LoadSceneOnClick.cs" />
      <Compile Include="Assets\Scripts\QuitOnClick.cs" />

@@ -12,25 +12,28 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        if(eventData.button == PointerEventData.InputButton.Left){ //Converting to left click only
         item = gameObject;
         startPosition = transform.position;
         startParent = transform.parent;
-       // GetComponent<CanvasGroup>().blocksRaycasts = false; 
+    }
+       
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        //transform.position = Input.mousePosition; 
+        if(eventData.button == PointerEventData.InputButton.Left){ //Converting to left click only
+        item = gameObject;
         var screenPoint = (Vector3)Input.mousePosition;
         screenPoint.z = 10.0f; //distance of the plane from the camera
         transform.position = Camera.main.ScreenToWorldPoint(screenPoint);
-
+    }
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
         item = null;
-       //GetComponent<CanvasGroup>().blocksRaycasts = true;
+
         if (transform.parent != startParent)
         {
             transform.position = startPosition;
