@@ -6,9 +6,11 @@ public class DrawLine : MonoBehaviour
     private Vector3 mousePos;    
     private Vector3 startPos;    // Start position of line
     private Vector3 endPos;    // End position of line
+    //gameObject.tag = "Wire";
+
     void Update () 
     {
-        
+            gameObject.tag = "Wires";
         // On mouse down new line will be created 
         if(Input.GetMouseButtonDown(1)) //Changing to right click for wires
         {
