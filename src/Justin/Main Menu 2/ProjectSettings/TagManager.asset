@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Gates
   - Spawner
+  - Wires
   layers:
   - Default
   - TransparentFX

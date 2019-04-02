@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 5236055390495943298}
   - component: {fileID: 4988036128403077746}
   - component: {fileID: 6904734266712913567}
+  - component: {fileID: 2420072032986196044}
+  - component: {fileID: 8095959176300342859}
   m_Layer: 0
   m_Name: OR1
   m_TagString: Gates
@@ -119,3 +121,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47173d4235bc543e8a132ea412aae84c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2420072032986196044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7486915107751033921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c66a5340c6834604a965c9a32136800, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  linesBoi: {fileID: 713484540026903323, guid: a085a1efd326949bda174ea325e0ff5c, type: 3}
+  targetTag: Gates
+--- !u!50 &8095959176300342859
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7486915107751033921}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
