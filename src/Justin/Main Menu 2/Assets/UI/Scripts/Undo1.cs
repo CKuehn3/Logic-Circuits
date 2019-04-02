@@ -98,20 +98,24 @@ public class Undo1 : MonoBehaviour
     {
 
         GameObject[] allGates = GameObject.FindGameObjectsWithTag("Gates");
-
+        int usize = undStk.Count;
+        int rsize = reStk.Count;
         foreach (GameObject gate in allGates)
         {
             Destroy(gate);
         }
-
-        for(int i = 0; i < undStk.Count; i++)
+        Debug.Log(undStk.Count);
+        for(int i = 0; i < usize; i++)
         {
+            Debug.Log(undStk.Count);
             undStk.Pop();
         }
-        for (int i = 0; i < reStk.Count; i++)
+        Debug.Log(undStk.Count);
+        for (int i = 0; i < rsize; i++)
         {
             reStk.Pop();
         }
+        Debug.Log(reStk.Count);
     }
 
     public static Stack<GameObject> getUndStk()
@@ -121,7 +125,7 @@ public class Undo1 : MonoBehaviour
 
     void overwrite()
     {
-        if (reStk.Count == 3)
+        if (reStk.Count == 6)
         {
             int diff = undStk.Count;
             for(int i = 0; i < diff; i++)
@@ -143,10 +147,12 @@ public class Undo1 : MonoBehaviour
             }
         }
 
-        if(count >= 3)
+        if(count >= 6)
         {
             res = true;
+            
         }
+        count = 0;
         return res;
     }
 }

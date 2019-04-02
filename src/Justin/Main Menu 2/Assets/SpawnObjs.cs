@@ -16,7 +16,7 @@ public class SpawnObjs: MonoBehaviour
     void Update()
     {
         gos = Undo1.getUndStk();
-        if (Input.GetMouseButtonDown(0) && made == false && gos.Count < 3)
+        if (Input.GetMouseButtonDown(0) && made == false && gos.Count < 6)
         {
             Vector3 spawnPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             spawnPosition.z = 0.0f;
@@ -25,7 +25,7 @@ public class SpawnObjs: MonoBehaviour
             Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
             Destroy(GameObject.FindGameObjectWithTag("Spawner"));
         }
-        else if(Input.GetMouseButtonDown(0) && gos.Count >= 3)
+        else if(Input.GetMouseButtonDown(0) && gos.Count >= 6)
         {
             Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
             made = true;
