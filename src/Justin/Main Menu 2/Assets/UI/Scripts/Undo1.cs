@@ -121,7 +121,7 @@ public class Undo1 : MonoBehaviour
 
     void overwrite()
     {
-        if (reStk.Count == 3)
+        if (reStk.Count == 6)
         {
             int diff = undStk.Count;
             for(int i = 0; i < diff; i++)
@@ -143,7 +143,7 @@ public class Undo1 : MonoBehaviour
             }
         }
 
-        if(count >= 3)
+        if(count >= 6)
         {
             res = true;
         }
