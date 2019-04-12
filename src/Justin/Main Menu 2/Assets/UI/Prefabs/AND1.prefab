@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 9034047831287491949}
   - component: {fileID: 4090496515756925507}
   - component: {fileID: 403743764709975376}
-  - component: {fileID: 2166299515286857254}
+  - component: {fileID: 3954901948093490514}
   m_Layer: 0
   m_Name: AND1
   m_TagString: Gates
@@ -199,7 +199,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &2166299515286857254
+--- !u!114 &3954901948093490514
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -208,9 +208,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 4079561331747763345}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c66a5340c6834604a965c9a32136800, type: 3}
+  m_Script: {fileID: 11500000, guid: aff8ce28dfb524f86925eafb526a2da1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  linesBoi: {fileID: 713484540026903323, guid: a085a1efd326949bda174ea325e0ff5c, type: 3}
-  gate: {fileID: 0}
-  targetTag: Gates
+  value: 0
+  inputs: 

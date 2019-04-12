@@ -53,14 +53,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\AndGateLogic.cs" />
      <Compile Include="Assets\DragHandler.cs" />
      <Compile Include="Assets\DrawLine.cs" />
      <Compile Include="Assets\MakeLinerino.cs" />
+     <Compile Include="Assets\NotGateLogic.cs" />
+     <Compile Include="Assets\OrGateLogic.cs" />
+     <Compile Include="Assets\Result.cs" />
      <Compile Include="Assets\Scripts\ClickSound.cs" />
      <Compile Include="Assets\Scripts\LoadSceneOnClick.cs" />
      <Compile Include="Assets\Scripts\QuitOnClick.cs" />
      <Compile Include="Assets\Scripts\SelectOnInput.cs" />
      <Compile Include="Assets\SpawnObjs.cs" />
+     <Compile Include="Assets\TestNegativeInput.cs" />
+     <Compile Include="Assets\TestPositiveInput.cs" />
      <Compile Include="Assets\UI\Scripts\ActiveStateToggler.cs" />
      <Compile Include="Assets\UI\Scripts\AndCursor.cs" />
      <Compile Include="Assets\UI\Scripts\ApplicationManager.cs" />

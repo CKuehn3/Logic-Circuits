@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1577394796822389670}
   - component: {fileID: 3787321450552474736}
   - component: {fileID: 8026737909588472677}
+  - component: {fileID: 7746027138913493187}
   m_Layer: 0
   m_Name: NOT1
   m_TagString: Gates
@@ -149,10 +150,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 194378896517489319}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9c66a5340c6834604a965c9a32136800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   linesBoi: {fileID: 713484540026903323, guid: a085a1efd326949bda174ea325e0ff5c, type: 3}
   targetTag: Gates
+--- !u!114 &7746027138913493187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 194378896517489319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e4c6758522944895be0ac77fe4ea926, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

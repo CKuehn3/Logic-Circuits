@@ -7,6 +7,12 @@ TagManager:
   - Gates
   - Spawner
   - Wires
+  - Gates And
+  - Gates Or
+  - Gates Not
+  - Input Positive
+  - Input Negative
+  - Result
   layers:
   - Default
   - TransparentFX
