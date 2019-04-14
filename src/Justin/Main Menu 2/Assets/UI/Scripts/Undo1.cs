@@ -20,7 +20,7 @@ public class Undo1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        allGates = FindGameObjectsWithTags(new string[] { "Gates And", "Gates Or", "Gates Not" });
+        allGates = FindGameObjectsWithTags(new string[] { "Gates And", "Gates Or", "Gates Not" , "Wires"});
         
         
        // Debug.Log(allGates.Length);

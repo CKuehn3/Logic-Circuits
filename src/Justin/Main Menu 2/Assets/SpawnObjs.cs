@@ -15,7 +15,7 @@ public class SpawnObjs: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        gos = Undo1.getUndStk();
+        
         if (Input.GetMouseButtonDown(0) && made == false && gos.Count < 6)
         {
             Vector3 spawnPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
