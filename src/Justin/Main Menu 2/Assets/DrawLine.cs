@@ -11,7 +11,7 @@ public class DrawLine : MonoBehaviour
 
     void Update () 
     {
-            gameObject.tag = "Wires";
+
         // On mouse down new line will be created 
         if(Input.GetMouseButtonDown(1)) //Changing to right click for wires
         {
@@ -107,6 +107,7 @@ public class DrawLine : MonoBehaviour
     private void createLine()
     {
         line = new GameObject("Line").AddComponent<LineRenderer>();
+        line.tag = "Wires";
         line.material =  new Material(Shader.Find("Diffuse"));
         line.SetVertexCount(2);
         line.SetWidth(0.1f,0.1f);
