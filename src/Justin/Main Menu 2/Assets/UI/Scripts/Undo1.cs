@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 
 public class Undo1 : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class Undo1 : MonoBehaviour
     //[SerializeField] private Button btn;
     private static Stack<GameObject> reStk;
     private static Stack<GameObject> undStk;
+    private static GameObject[] allGates;
 
     private void Start()
     {
@@ -18,7 +20,7 @@ public class Undo1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GameObject[] allGates = GameObject.FindGameObjectsWithTag("Gates");
+        allGates = FindGameObjectsWithTags(new string[] { "Gates And", "Gates Or", "Gates Not" });
         
         
        // Debug.Log(allGates.Length);
@@ -94,10 +96,10 @@ public class Undo1 : MonoBehaviour
             Debug.Log("Can't pop off empty stack");
         }
     }
-    public void Clear()
+    public void Clear() //not clearing properly might  check if disconnect SpawnObjs.cs
     {
 
-        GameObject[] allGates = GameObject.FindGameObjectsWithTag("Gates");
+        
         int usize = undStk.Count;
         int rsize = reStk.Count;
         foreach (GameObject gate in allGates)
@@ -138,10 +140,10 @@ public class Undo1 : MonoBehaviour
     {
         bool res = false;
         int count = 0;
-        GameObject[] gos = GameObject.FindGameObjectsWithTag("Gates");
-        foreach(GameObject go in gos)
+        
+        foreach (GameObject gate in allGates)
         {
-            if (go.activeSelf)
+            if (gate.activeSelf)
             {
                 count = count + 1;
             }
@@ -154,5 +156,19 @@ public class Undo1 : MonoBehaviour
         }
         count = 0;
         return res;
+    }
+
+    // found this code from the following https://answers.unity.com/questions/973677/add-gameobjects-with-different-tags-to-one-array.html
+    GameObject[] FindGameObjectsWithTags(params string[] tags)
+    {
+        var all = new List<GameObject>();
+
+        foreach (string tag in tags)
+        {
+            var temp = GameObject.FindGameObjectsWithTag(tag).ToList();
+            all = all.Concat(temp).ToList();
+        }
+
+        return all.ToArray();
     }
 }
