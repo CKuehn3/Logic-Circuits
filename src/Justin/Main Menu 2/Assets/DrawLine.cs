@@ -8,6 +8,7 @@ public class DrawLine : MonoBehaviour
     private Vector3 endPos;    // End position of line
     //gameObject.tag = "Wire";
     private bool value; 
+    public GameObject passingObject; 
 
     void Update () 
     {
@@ -24,33 +25,8 @@ public class DrawLine : MonoBehaviour
 
             RaycastHit2D ray = Physics2D.GetRayIntersection(Camera.main.ScreenPointToRay(Input.mousePosition));
             if (ray){
-                GameObject hitGameObject = ray.collider.gameObject;
-                //Set if condition to 'andgate' tag
-                if(hitGameObject.tag.Contains("And")){
-                    Debug.Log("Clicked AND gate."); 
-                    this.value = hitGameObject.GetComponent<AndGateLogic>().value; //Set wire value to value retrieved from clicked object
-                    Debug.Log("AND: " + hitGameObject.GetComponent<AndGateLogic>().value); 
-                }
-                else if(hitGameObject.tag.Contains("Or")){
-                    Debug.Log("Clicked OR gate."); 
-                    this.value = hitGameObject.GetComponent<OrGateLogic>().value; //Set wire value to value retrieved from clicked object
-                    Debug.Log("OR: " + hitGameObject.GetComponent<OrGateLogic>().value); 
-                }
-                else if(hitGameObject.tag.Contains("Not")){
-                    Debug.Log("Clicked NOT gate."); 
-                    this.value = hitGameObject.GetComponent<NotGateLogic>().value; //Set wire value to value retrieved from clicked object
-                    Debug.Log("OR: " + hitGameObject.GetComponent<NotGateLogic>().value); 
-                }
-                else if(hitGameObject.tag.Contains("Positive")){
-                    Debug.Log("Hit Test Input"); 
-                    this.value = hitGameObject.GetComponent<TestPositiveInput>().value; 
-                    Debug.Log("Test Input Val: " + hitGameObject.GetComponent<TestPositiveInput>().value); 
-                }
-                else if(hitGameObject.tag.Contains("Negative")){
-                    Debug.Log("Hit Test Input"); 
-                    this.value = hitGameObject.GetComponent<TestNegativeInput>().value; 
-                    Debug.Log("Test Input Val: " + hitGameObject.GetComponent<TestNegativeInput>().value); 
-                }
+
+                passingObject = ray.collider.gameObject;
 
             }
         }
@@ -69,28 +45,24 @@ public class DrawLine : MonoBehaviour
             RaycastHit2D ray = Physics2D.GetRayIntersection(Camera.main.ScreenPointToRay(Input.mousePosition));
             if (ray){
                 GameObject hitGameObject = ray.collider.gameObject;
-                //Debug.Log(hitGameObject); 
+
                 if(hitGameObject.tag.Contains("Or")){
-                    Debug.Log("Released on Or gate."); 
-                    hitGameObject.GetComponent<OrGateLogic>().inputs.Add(this.value); //Set receiving gate value
-                    Debug.Log("OR Val: " + hitGameObject.GetComponent<OrGateLogic>().value);  
+                    hitGameObject.GetComponent<OrGateLogic>().setParent(passingObject); 
+                    Debug.Log("Parent: " + hitGameObject.GetComponent<OrGateLogic>().parent); 
                 }
                 else if(hitGameObject.tag.Contains("And")){
-                    Debug.Log("Released on And gate."); 
-                    hitGameObject.GetComponent<AndGateLogic>().inputs.Add(this.value); //Set receiving gate value
-                    Debug.Log("AND Val: " + hitGameObject.GetComponent<AndGateLogic>().value);  
+                    hitGameObject.GetComponent<AndGateLogic>().setParent(passingObject); 
+                    Debug.Log("Parent: " + hitGameObject.GetComponent<AndGateLogic>().parent); 
                 }
                 else if(hitGameObject.tag.Contains("Not")){
-                    Debug.Log("Released on Not gate."); 
-                    hitGameObject.GetComponent<NotGateLogic>().tempVal = this.value; //Set receiving gate value
-                    Debug.Log("NOT Val: " + hitGameObject.GetComponent<NotGateLogic>().value);  
+                    hitGameObject.GetComponent<NotGateLogic>().setParent(passingObject); 
+                    Debug.Log("Parent: " + hitGameObject.GetComponent<NotGateLogic>().parent); 
                 }
                 else if(hitGameObject.tag.Contains("Result")){
-                    Debug.Log("Released on Result."); 
-                    hitGameObject.GetComponent<Result>().value = this.value; //Set receiving gate value
-                    Debug.Log("RESULT Value: " + hitGameObject.GetComponent<Result>().value);  
+                    hitGameObject.GetComponent<Result>().setParent(passingObject); 
+                    Debug.Log("Parent: " + hitGameObject.GetComponent<Result>().parent); 
                 }
-
+                setPassingObjectChild(hitGameObject); 
             }
         }
         else if(Input.GetMouseButton(1)) //Changing to right click for wires
@@ -111,7 +83,7 @@ public class DrawLine : MonoBehaviour
         line.material =  new Material(Shader.Find("Diffuse"));
         line.SetVertexCount(2);
         line.SetWidth(0.1f,0.1f);
-        line.SetColors(Color.yellow, Color.yellow);
+        //line.SetColors(Color.yellow, Color.yellow);
         line.useWorldSpace = true;    
     }
     // Following method adds collider to created line
@@ -131,5 +103,20 @@ public class DrawLine : MonoBehaviour
         }
         angle = Mathf.Rad2Deg * Mathf.Atan (angle);
         col.transform.Rotate (0, 0, angle);
+    }
+
+    private void setPassingObjectChild(GameObject childObj){
+         if(this.passingObject.tag.Contains("And")){
+             this.passingObject.GetComponent<AndGateLogic>().setChild(childObj);
+          }
+        else if(this.passingObject.tag.Contains("Or")){
+            this.passingObject.GetComponent<OrGateLogic>().setChild(childObj);
+         }
+        else if(this.passingObject.tag.Contains("Not")){
+            this.passingObject.GetComponent<NotGateLogic>().setChild(childObj);
+        }
+        else if(this.passingObject.tag.Contains("Positive")){
+            this.passingObject.GetComponent<TestPositiveInput>().setChild(childObj);
+        }            
     }
 }
