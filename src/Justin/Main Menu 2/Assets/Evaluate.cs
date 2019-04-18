@@ -18,9 +18,9 @@ public class Evaluate : MonoBehaviour
     }
 
     public void onClick(){
-        GameObject inputx  = GameObject.Find("Input X"); 
-        GameObject inputy = GameObject.Find("Input Y"); 
-        GameObject inputz = GameObject.Find("Input Z"); 
+        GameObject inputx  = GameObject.Find("InputX"); 
+        GameObject inputy = GameObject.Find("InputY"); 
+        GameObject inputz = GameObject.Find("InputZ"); 
     	inputx.GetComponent<TestPositiveInput>().setValue(true); 
     	inputy.GetComponent<TestPositiveInput>().setValue(true); 
         inputz.GetComponent<TestPositiveInput>().setValue(false); 
