@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class TableBehavior : MonoBehaviour
 {
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -38,7 +39,7 @@ public class TableBehavior : MonoBehaviour
         }
         for (int i = 1; i < (Rows); i++)
         {
-            CurrentVector = new Vector3(CurrentVector.x, CurrentVector.y - (float)(.65));
+            CurrentVector = new Vector3(CurrentVector.x, CurrentVector.y - (float)(.775));
             GameObject NewRow = Instantiate(Row, CurrentVector, Quaternion.identity , TableArea.transform);
             NewRow.name = "TableDataItem("+ i +")";
         }
@@ -55,9 +56,31 @@ public class TableBehavior : MonoBehaviour
                 Current.GetComponent<Text>().text = items[i+1, j];
             }
         }
-
-
-
+      }
+    private bool StringtoBool(string s) {
+        if (s == "T") { return true; }
+        else { return false; }
+    }
+    
+    public void Check() {
+        int Rows = 5;
+        int Variable = 3;
+        for (int i = 0; i < (Rows); i++)
+        {
+            GameObject Current = GameObject.Find("TruthTable" +
+                "/TableData/TableDataItem(" + i + ")");
+            GameObject Text = GameObject.Find("TruthTable" +
+                "/TableData/TableDataItem(" + i + ")" +
+                "/ToF(" + Variable + ")");
+    
+            if (StringtoBool(Text.GetComponent<Text>().text))// == vairable location
+            {
+                Current.GetComponent<Image>().color = new Color32(0, 255, 0, 50);
+            }
+            else { Current.GetComponent<Image>().color = new Color32(255, 0, 0, 50); }
+    
+    
+        }
     }
 
     // Update is called once per frame
