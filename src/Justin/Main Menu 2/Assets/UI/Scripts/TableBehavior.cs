@@ -11,7 +11,7 @@ public class TableBehavior : MonoBehaviour
     {
         string[,] items = new string[,]
         {
-            {"X","Y","X","A"},
+            {"X","Y","Z","A"},
             {"T","T","T", "T"},
             {"T","T","F", "T"},
             {"F","F","T", "F"},
@@ -69,10 +69,11 @@ public class TableBehavior : MonoBehaviour
         {
             GameObject Current = GameObject.Find("TruthTable" +
                 "/TableData/TableDataItem(" + i + ")");
+            Debug.Log("Current: " + Current); 
             GameObject Text = GameObject.Find("TruthTable" +
                 "/TableData/TableDataItem(" + i + ")" +
                 "/ToF(" + Variable + ")");
-    
+
             if (StringtoBool(Text.GetComponent<Text>().text))// == vairable location
             {
                 Current.GetComponent<Image>().color = new Color32(0, 255, 0, 50);
