@@ -22,6 +22,18 @@ public class NotGateLogic : MonoBehaviour
       //calculateGateValue();    
     }
 
+    public void reset(){
+        if(this.child.tag.Contains("And")){
+            this.child.GetComponent<AndGateLogic>().reset(); 
+        }
+        else if(this.child.tag.Contains("Or")){
+            this.child.GetComponent<OrGateLogic>().reset(); 
+        }
+        else if(this.child.tag.Contains("Not")){
+            this.child.GetComponent<NotGateLogic>().reset(); 
+        }
+    }
+
     void calculateGateValue(){
 
         value = !tempVal;

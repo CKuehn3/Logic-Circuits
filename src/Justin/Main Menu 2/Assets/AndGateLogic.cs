@@ -22,6 +22,20 @@ public class AndGateLogic : MonoBehaviour
         //calculateGateValue(); 
     }
 
+    public void reset(){
+        this.inputs.Clear(); 
+
+        if(this.child.tag.Contains("And")){
+            this.child.GetComponent<AndGateLogic>().reset(); 
+        }
+        else if(this.child.tag.Contains("Or")){
+            this.child.GetComponent<OrGateLogic>().reset(); 
+        }
+        else if(this.child.tag.Contains("Not")){
+            this.child.GetComponent<NotGateLogic>().reset(); 
+        }
+    }
+
     void calculateGateValue(){
         bool tempVal = true; 
         foreach(bool val in inputs){
@@ -58,7 +72,7 @@ public class AndGateLogic : MonoBehaviour
         }
         else if(this.child.tag.Contains("Or")){
             this.child.GetComponent<OrGateLogic>().setValue(this.value); 
-            Debug.Log("And gate calling Or set value()"); 
+            //Debug.Log("And gate calling Or set value()"); 
         }
         else if(this.child.tag.Contains("Not")){
             this.child.GetComponent<NotGateLogic>().setValue(this.value); 

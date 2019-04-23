@@ -13,10 +13,10 @@ public class TableBehavior : MonoBehaviour
         {
             {"X","Y","Z","A"},
             {"F","F","F", "T"},
-            {"F","F","T", "T"},
+            {"F","F","T", "F"},
             {"F","T","F", "T"},
             {"F","T","T", "F"},
-            {"T","F","F", "F"},
+            {"T","F","F", "T"},
             {"T","F","T", "F"},
             {"T","T","F", "F"},
             {"T","T","T", "F"}
@@ -96,6 +96,8 @@ public class TableBehavior : MonoBehaviour
             Debug.Log("Y value Set to " + StringtoBool(Yval.GetComponent<Text>().text));
             inputz.GetComponent<TestPositiveInput>().setValue(StringtoBool(Zval.GetComponent<Text>().text));
             Debug.Log("Z value Set to " + StringtoBool(Zval.GetComponent<Text>().text));
+            Debug.Log("RESULTTEXT Row " + i + ": " +StringtoBool(resultText.GetComponent<Text>().text)); 
+            Debug.Log("RESULT Row " + i + ": " + result.GetComponent<Result>().value); 
 
             if (StringtoBool(resultText.GetComponent<Text>().text) == result.GetComponent<Result>().value)
                 {
@@ -103,9 +105,16 @@ public class TableBehavior : MonoBehaviour
                 Debug.Log(resultText.GetComponent<Text>().text + " = " + result.GetComponent<Result>().value);
                 }
                 else { Current.GetComponent<Image>().color = new Color32(255, 0, 0, 50); Debug.Log(resultText.GetComponent<Text>().text + " != " + result.GetComponent<Result>().value); }
-                
+             
+
+                     //Reset Gate Values for next loop
+        inputx.GetComponent<TestPositiveInput>().onReset(); 
+        inputy.GetComponent<TestPositiveInput>().onReset(); 
+        inputz.GetComponent<TestPositiveInput>().onReset();    
+        
         }
-    }
+
+   }
 
     // Update is called once per frame
     void Update()

@@ -19,6 +19,18 @@ public class TestPositiveInput : MonoBehaviour
         
     }
 
+    public void onReset(){
+        if(this.child.tag.Contains("And")){
+            this.child.GetComponent<AndGateLogic>().reset(); 
+        }
+        else if(this.child.tag.Contains("Or")){
+            this.child.GetComponent<OrGateLogic>().reset(); 
+        }
+        else if(this.child.tag.Contains("Not")){
+            this.child.GetComponent<NotGateLogic>().reset(); 
+        }
+    }
+
     public void setValue(bool val){
         value = val; 
         alterChild(); 
