@@ -22,7 +22,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - overlay
   - 
   - 
   - 
@@ -55,4 +55,7 @@ TagManager:
     locked: 0
   - name: foreground
     uniqueID: 1735084045
+    locked: 0
+  - name: Overlay
+    uniqueID: 3355856255
     locked: 0

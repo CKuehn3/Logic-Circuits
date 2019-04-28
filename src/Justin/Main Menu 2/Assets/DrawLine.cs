@@ -85,6 +85,7 @@ public class DrawLine : MonoBehaviour
         line.SetWidth(0.1f,0.1f);
         //line.SetColors(Color.yellow, Color.yellow);
         line.useWorldSpace = true;    
+        line.sortingLayerName = "background"; 
     }
     // Following method adds collider to created line
     private void addColliderToLine()
