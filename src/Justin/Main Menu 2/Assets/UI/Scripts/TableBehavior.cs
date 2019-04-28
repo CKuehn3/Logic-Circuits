@@ -2,13 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
+using System;
 
 public class TableBehavior : MonoBehaviour
 {
+    //[SerializeField]
+    public const int minGates = 3;
     
     // Start is called before the first frame update
     void Start()
     {
+        //minGates = 3;
         string[,] items = new string[,]
         {
             {"X","Y","Z","A"},
@@ -67,6 +72,7 @@ public class TableBehavior : MonoBehaviour
     
     public void Check() {
         int Rows = 8;
+        int count = 0;
         int Variable = 3;
         GameObject inputx = GameObject.Find("Input X");
         GameObject inputy = GameObject.Find("Input Y");
@@ -101,11 +107,20 @@ public class TableBehavior : MonoBehaviour
 
             if (StringtoBool(resultText.GetComponent<Text>().text) == result.GetComponent<Result>().value)
                 {
+                count++;
                     Current.GetComponent<Image>().color = new Color32(0, 255, 0, 50);
                 Debug.Log(resultText.GetComponent<Text>().text + " = " + result.GetComponent<Result>().value);
                 }
                 else { Current.GetComponent<Image>().color = new Color32(255, 0, 0, 50); Debug.Log(resultText.GetComponent<Text>().text + " != " + result.GetComponent<Result>().value); }
-             
+            if (count == Rows)
+            {
+                GameObject[] gates = FindGameObjectsWithTags(new string[] { "Gates And", "Gates Or", "Gates Not"});
+                Debug.Log("CHASE ADDED THIS");
+                Debug.Log("Number of gates: " + gates.Length);
+                //Debug.Log(minGates);
+                Debug.Log("Score: " + Math.Floor((float)minGates/gates.Length*1000 ));
+                count = 0;
+            }
 
                      //Reset Gate Values for next loop
         inputx.GetComponent<TestPositiveInput>().onReset(); 
@@ -114,11 +129,25 @@ public class TableBehavior : MonoBehaviour
         
         }
 
-   }
+       
+
+    }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+    GameObject[] FindGameObjectsWithTags(params string[] tags)
+    {
+        var all = new List<GameObject>();
+
+        foreach (string tag in tags)
+        {
+            var temp = GameObject.FindGameObjectsWithTag(tag).ToList();
+            all = all.Concat(temp).ToList();
+        }
+
+        return all.ToArray();
     }
 }

@@ -149,7 +149,7 @@ public class Undo1 : MonoBehaviour
             }
         }
 
-        if(count >= 6)
+        if(count >= 10)
         {
             res = true;
             
