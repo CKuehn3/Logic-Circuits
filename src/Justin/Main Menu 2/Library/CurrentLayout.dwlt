@@ -356,9 +356,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: bc070000
       m_LastClickedID: 0
-      m_ExpandedIDs: 1af9ffffd4fbffff
+      m_ExpandedIDs: d4fbffff100f0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -374,7 +374,7 @@ MonoBehaviour:
         m_IsRenaming: 0
         m_OriginalEventType: 11
         m_IsRenamingFilename: 0
-        m_ClientGUIView: {fileID: 7}
+        m_ClientGUIView: {fileID: 0}
       m_SearchString: 
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0
@@ -420,7 +420,7 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Scripts
   m_ViewMode: 0
   m_StartGridSize: 64
   m_LastFolders: []
@@ -461,21 +461,21 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: ffffffff00000000c4090000f0090000000a00008c0a0000a60b00009c0c0000b40c0000c60c0000ce2c0000d02c0000d22c0000d42c0000d62c0000
+    m_ExpandedIDs: ffffffff00000000c40900008c0a00009c0c0000b40c0000c60c0000ce2c0000d02c0000d22c0000d42c0000d62c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: TestNegativeInput
+      m_OriginalName: TestNegativeInput
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 1968
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 8}
     m_SearchString: 
