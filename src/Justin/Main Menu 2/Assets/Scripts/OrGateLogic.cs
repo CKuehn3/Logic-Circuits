@@ -7,6 +7,7 @@ public class OrGateLogic : MonoBehaviour
 	public bool value; 
 	public List<bool> inputs = new List<bool>(); 
     public GameObject child = null; 
+    public GameObject hintBtn; 
    // public GameObject parent = null; 
     public List<GameObject> parent = new List<GameObject>(); 
     
@@ -53,6 +54,12 @@ public class OrGateLogic : MonoBehaviour
 
     public void setParent(GameObject obj){
         parent.Add(obj);  
+        if(parent.Count > 2){
+            hintBtn = GameObject.Find("Hint"); 
+            hintBtn.GetComponent<HintManager>().createHint("Make sure you have, at most, 2 inputs to your OR gate."); 
+            Debug.Log("Added Hint"); 
+            hintBtn.GetComponent<HintManager>().setRed(); 
+        }
     }
 
     public void setChild(GameObject obj){

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AndGateLogic : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class AndGateLogic : MonoBehaviour
     public GameObject child = null; 
     //public GameObject parent = null; 
     public List<GameObject> parent = new List<GameObject>(); 
-
+    public GameObject hintBtn; 
     // Start is called before the first frame update
     void Start()
     {
@@ -50,6 +51,12 @@ public class AndGateLogic : MonoBehaviour
     public void setParent(GameObject obj){
         //parent = obj;
         parent.Add(obj);  
+        if(parent.Count > 2){
+            hintBtn = GameObject.Find("Hint"); 
+            hintBtn.GetComponent<HintManager>().createHint("Make sure you have, at most, 2 inputs to your AND gate."); 
+            Debug.Log("Added Hint"); 
+            hintBtn.GetComponent<HintManager>().setRed(); 
+        }
     }
 
     public void setChild(GameObject obj){
