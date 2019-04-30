@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System; 
 
 public class TestPositiveInput : MonoBehaviour
 {
 	public bool value; 
     GameObject child; 
+    GameObject hintBtn; 
 
     // Start is called before the first frame update
     void Start()
@@ -20,14 +22,22 @@ public class TestPositiveInput : MonoBehaviour
     }
 
     public void onReset(){
-        if(this.child.tag.Contains("And")){
-            this.child.GetComponent<AndGateLogic>().reset(); 
-        }
-        else if(this.child.tag.Contains("Or")){
-            this.child.GetComponent<OrGateLogic>().reset(); 
-        }
-        else if(this.child.tag.Contains("Not")){
-            this.child.GetComponent<NotGateLogic>().reset(); 
+        try{
+            if(this.child.tag.Contains("And")){
+                this.child.GetComponent<AndGateLogic>().reset(); 
+            }
+            else if(this.child.tag.Contains("Or")){
+                this.child.GetComponent<OrGateLogic>().reset(); 
+            }
+            else if(this.child.tag.Contains("Not")){
+                this.child.GetComponent<NotGateLogic>().reset(); 
+            }
+
+        }catch(Exception e){
+            hintBtn = GameObject.Find("Hint"); 
+            hintBtn.GetComponent<HintManager>().createHint("Make sure you use ALL inputs in your circuit."); 
+            Debug.Log("Added Hint"); 
+            hintBtn.GetComponent<HintManager>().setRed(); 
         }
     }
 
@@ -43,17 +53,24 @@ public class TestPositiveInput : MonoBehaviour
     }
 
     private void alterChild(){
-        if(this.child.tag.Contains("And")){
-            this.child.GetComponent<AndGateLogic>().setValue(this.value); 
-        }
-        else if(this.child.tag.Contains("Or")){
-            this.child.GetComponent<OrGateLogic>().setValue(this.value); 
-        }
-        else if(this.child.tag.Contains("Not")){
-            this.child.GetComponent<NotGateLogic>().setValue(this.value); 
-        }
-        else if (this.child.tag.Contains("Result")){
-            Debug.Log("Invalid Move"); 
-        }
+        try{
+            if(this.child.tag.Contains("And")){
+                this.child.GetComponent<AndGateLogic>().setValue(this.value); 
+            }
+            else if(this.child.tag.Contains("Or")){
+                this.child.GetComponent<OrGateLogic>().setValue(this.value); 
+            }
+            else if(this.child.tag.Contains("Not")){
+                this.child.GetComponent<NotGateLogic>().setValue(this.value); 
+            }
+            else if (this.child.tag.Contains("Result")){
+                Debug.Log("Invalid Move"); 
+            }
+        } catch(Exception e){
+            hintBtn = GameObject.Find("Hint"); 
+            hintBtn.GetComponent<HintManager>().createHint("Make sure you use ALL inputs in your circuit."); 
+            Debug.Log("Added Hint"); 
+            hintBtn.GetComponent<HintManager>().setRed(); 
+            }
     }
 }

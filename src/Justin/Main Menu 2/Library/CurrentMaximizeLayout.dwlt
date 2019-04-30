@@ -25,7 +25,7 @@ MonoBehaviour:
   m_MinSize: {x: 538, y: 474}
   m_MaxSize: {x: 18008, y: 14024}
   vertical: 0
-  controlID: 91
+  controlID: 10
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -130,7 +130,7 @@ MonoBehaviour:
   m_MinSize: {x: 232, y: 474}
   m_MaxSize: {x: 10002, y: 14024}
   vertical: 1
-  controlID: 92
+  controlID: 61
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -185,10 +185,10 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 76}
+      scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: d4fbffffd80d0000200e00009e0e0000
+      m_ExpandedIDs: d4fbffffd80d00009e0e0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -276,7 +276,7 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts
+    - Assets/UI/Scripts
   m_ViewMode: 0
   m_StartGridSize: 64
   m_LastFolders: []
@@ -314,24 +314,24 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_AssetTreeState:
-    scrollPos: {x: 0, y: 12}
-    m_SelectedIDs: f20d0000
-    m_LastClickedID: 0
-    m_ExpandedIDs: ffffffff00000000c6090000f2090000a80b0000a00c0000b80c0000d42c0000d62c0000d82c0000da2c0000dc2c0000
+    scrollPos: {x: 0, y: 504.0003}
+    m_SelectedIDs: 20080000
+    m_LastClickedID: 2080
+    m_ExpandedIDs: ffffffff00000000c6090000f20900008e0a0000a80b0000a00c0000b80c0000d42c0000d62c0000d82c0000da2c0000dc2c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: AndGateLogic
+      m_OriginalName: AndGateLogic
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 1980
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 6}
     m_SearchString: 
@@ -342,8 +342,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: f20d0000
-    m_LastClickedInstanceID: 3570
+    m_SelectedInstanceIDs: 20080000
+    m_LastClickedInstanceID: 2080
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: 342f0000e82b0000582c00001c4a0000802e0000d22b000000000000
     m_RenameOverlay:
