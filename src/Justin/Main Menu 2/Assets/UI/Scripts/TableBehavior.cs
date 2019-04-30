@@ -9,6 +9,7 @@ public class TableBehavior : MonoBehaviour
 {
     //[SerializeField]
     public const int minGates = 3;
+    public GameObject canvas;
     
     // Start is called before the first frame update
     void Start()
@@ -120,6 +121,7 @@ public class TableBehavior : MonoBehaviour
                 //Debug.Log(minGates);
                 Debug.Log("Score: " + Math.Floor((float)minGates/gates.Length*1000 ));
                 count = 0;
+                displayScoreCanvas();
             }
 
                      //Reset Gate Values for next loop
@@ -131,6 +133,12 @@ public class TableBehavior : MonoBehaviour
 
        
 
+    }
+    void displayScoreCanvas()
+    {
+        // GameObject canvas = GameObject.FindObjectWithTag("ScoreCanvas");
+       // GameObject canvas = GameObject.Find("Score");
+       //canvas.SetActive(true);
     }
 
     // Update is called once per frame

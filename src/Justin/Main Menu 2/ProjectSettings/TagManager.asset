@@ -13,6 +13,7 @@ TagManager:
   - Input Positive
   - Input Negative
   - Result
+  - ScoreCanvas
   layers:
   - Default
   - TransparentFX
