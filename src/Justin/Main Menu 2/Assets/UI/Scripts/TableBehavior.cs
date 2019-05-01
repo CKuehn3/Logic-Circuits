@@ -8,14 +8,27 @@ using System;
 public class TableBehavior : MonoBehaviour
 {
     //[SerializeField]
-    public const int minGates = 3;
-    public GameObject canvas;
-    
+    //private int minGates;
+    //[SerializeField]
+    //private GameObject canvas;
+    private GameObject canvas;
+    private Transform canvasT;
+    public static bool solved;
+    private void Awake()
+    {
+        //display(canvas, false);
+    }
     // Start is called before the first frame update
     void Start()
     {
+        canvas = GameObject.Find("Score");
+        canvasT = canvas.transform;
+        GameObject button = canvasT.GetChild(0).GetChild(2).gameObject;
+        button.SetActive(false);
+        solved = false;
         //canvas.SetActive(false); 
 
+        canvas.GetComponent<CanvasGroup>().alpha = 0.0f;
         //minGates = 3;
         string[,] items = new string[,]
         {
@@ -39,41 +52,46 @@ public class TableBehavior : MonoBehaviour
         Vector3 CurrentVector = Row.transform.position;
 
 
-        for (int i = 1; i < (Variables + 1); i++) {
-            GameObject NewHeaderItem = Instantiate(HeaderItem,Header.transform);
+        for (int i = 1; i < (Variables + 1); i++)
+        {
+            GameObject NewHeaderItem = Instantiate(HeaderItem, Header.transform);
             NewHeaderItem.name = "TableItem(" + i + ")";
         }
         for (int i = 1; i < (Variables + 1); i++)
         {
             GameObject NewToF = Instantiate(TrueorFalse, Row.transform);
-            NewToF.name = "ToF("+ i + ")";
+            NewToF.name = "ToF(" + i + ")";
         }
         for (int i = 1; i < (Rows); i++)
         {
             CurrentVector = new Vector3(CurrentVector.x, CurrentVector.y - (float)(.775));
-            GameObject NewRow = Instantiate(Row, CurrentVector, Quaternion.identity , TableArea.transform);
-            NewRow.name = "TableDataItem("+ i +")";
+            GameObject NewRow = Instantiate(Row, CurrentVector, Quaternion.identity, TableArea.transform);
+            NewRow.name = "TableDataItem(" + i + ")";
         }
-        for (int i = 0; i < (Variables + 1); i++) {
+        for (int i = 0; i < (Variables + 1); i++)
+        {
             GameObject Current = GameObject.Find("TableItem(" + i + ")");
-            Current.GetComponent<Text>().text = items[0,i];
+            Current.GetComponent<Text>().text = items[0, i];
         }
         for (int i = 0; i < (Rows); i++)
         {
-            for (int j = 0; j < (Variables + 1); j++) {
+            for (int j = 0; j < (Variables + 1); j++)
+            {
                 GameObject Current = GameObject.Find("TruthTable" +
                     "/TableData/TableDataItem(" + i + ")" +
                     "/ToF(" + j + ")");
-                Current.GetComponent<Text>().text = items[i+1, j];
+                Current.GetComponent<Text>().text = items[i + 1, j];
             }
         }
-      }
-    private bool StringtoBool(string s) {
+    }
+    private bool StringtoBool(string s)
+    {
         if (s == "T") { return true; }
         else { return false; }
     }
-    
-    public void Check() {
+
+    public void Check(int minGates)
+    {
         int Rows = 8;
         int count = 0;
         int Variable = 3;
@@ -105,48 +123,58 @@ public class TableBehavior : MonoBehaviour
             Debug.Log("Y value Set to " + StringtoBool(Yval.GetComponent<Text>().text));
             inputz.GetComponent<TestPositiveInput>().setValue(StringtoBool(Zval.GetComponent<Text>().text));
             Debug.Log("Z value Set to " + StringtoBool(Zval.GetComponent<Text>().text));
-            Debug.Log("RESULTTEXT Row " + i + ": " +StringtoBool(resultText.GetComponent<Text>().text)); 
-            Debug.Log("RESULT Row " + i + ": " + result.GetComponent<Result>().value); 
+            Debug.Log("RESULTTEXT Row " + i + ": " + StringtoBool(resultText.GetComponent<Text>().text));
+            Debug.Log("RESULT Row " + i + ": " + result.GetComponent<Result>().value);
 
             if (StringtoBool(resultText.GetComponent<Text>().text) == result.GetComponent<Result>().value)
-                {
+            {
                 count++;
-                    Current.GetComponent<Image>().color = new Color32(0, 255, 0, 50);
+                Current.GetComponent<Image>().color = new Color32(0, 255, 0, 50);
                 Debug.Log(resultText.GetComponent<Text>().text + " = " + result.GetComponent<Result>().value);
-                }
-                else { Current.GetComponent<Image>().color = new Color32(255, 0, 0, 50); Debug.Log(resultText.GetComponent<Text>().text + " != " + result.GetComponent<Result>().value); }
+            }
+            else { Current.GetComponent<Image>().color = new Color32(255, 0, 0, 50); Debug.Log(resultText.GetComponent<Text>().text + " != " + result.GetComponent<Result>().value); }
             if (count == Rows)
             {
-                GameObject[] gates = FindGameObjectsWithTags(new string[] { "Gates And", "Gates Or", "Gates Not"});
+                canvas = GameObject.Find("Score");
+                canvasT = canvas.transform;
+                GameObject button = canvasT.GetChild(0).GetChild(2).gameObject;
+                button.SetActive(true);
+                solved = true;
+                GameObject[] gates = FindGameObjectsWithTags(new string[] { "Gates And", "Gates Or", "Gates Not" });
                 Debug.Log("CHASE ADDED THIS");
+                Debug.Log(minGates);
                 Debug.Log("Number of gates: " + gates.Length);
                 //Debug.Log(minGates);
-                Debug.Log("Score: " + Math.Floor((float)minGates/gates.Length*1000 ));
+                Debug.Log("Score: " + Math.Floor((float)minGates / gates.Length * 1000));
+
+                Text text = canvasT.GetChild(0).GetChild(1).gameObject.GetComponent<Text>();
+                text.text = "" + (Math.Floor((float)minGates / gates.Length * 1000)) + "/1000";
                 count = 0;
-                displayScoreCanvas();
+                canvas.GetComponent<CanvasGroup>().alpha = 1f;
+                //display(canvas,true);
             }
 
-                     //Reset Gate Values for next loop
-        inputx.GetComponent<TestPositiveInput>().onReset(); 
-        inputy.GetComponent<TestPositiveInput>().onReset(); 
-        inputz.GetComponent<TestPositiveInput>().onReset();    
-        
+            //Reset Gate Values for next loop
+            inputx.GetComponent<TestPositiveInput>().onReset();
+            inputy.GetComponent<TestPositiveInput>().onReset();
+            inputz.GetComponent<TestPositiveInput>().onReset();
+
         }
 
-       
+
 
     }
-    void displayScoreCanvas()
+    void display(GameObject c, bool t)
     {
         // GameObject canvas = GameObject.FindObjectWithTag("ScoreCanvas");
-       // GameObject canvas = GameObject.Find("Score");
-       //canvas.SetActive(true);
+        //GameObject canvas = GameObject.Find("Score");
+        c.SetActive(t);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     GameObject[] FindGameObjectsWithTags(params string[] tags)
     {
