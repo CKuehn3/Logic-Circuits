@@ -43,6 +43,7 @@ public static class SaveLoad
         SaveLoadData file = new SaveLoadData(gates, xs, ys, zs);
         formatter.Serialize(stream, file);
         stream.Close();
+        Debug.Log("SaveLoad.Save()");
     }
 
 
@@ -57,7 +58,7 @@ public static class SaveLoad
 
             SaveLoadData file = formatter.Deserialize(stream) as SaveLoadData;
             stream.Close();
-
+            Debug.Log("SaveLoad.Load()");
             return file;
         }
         else 

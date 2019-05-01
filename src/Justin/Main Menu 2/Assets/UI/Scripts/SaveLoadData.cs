@@ -16,5 +16,6 @@ public class SaveLoadData
         xPositions = xs;
         yPositions = ys;
         zPositions = zs;
+        Debug.Log("SaveLoadData made");
     }
 }
