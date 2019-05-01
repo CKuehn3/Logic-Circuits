@@ -11,6 +11,7 @@ public class TableBehavior : MonoBehaviour
     //private int minGates;
     //[SerializeField]
     //private GameObject canvas;
+    [SerializeField]
     private GameObject canvas;
     private Transform canvasT;
     public static bool solved;
@@ -21,14 +22,14 @@ public class TableBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        canvas = GameObject.Find("Score");
-        canvasT = canvas.transform;
-        GameObject button = canvasT.GetChild(0).GetChild(2).gameObject;
-        button.SetActive(false);
+        //canvas = GameObject.Find("Score");
+        //canvasT = canvas.transform;
+        //GameObject button = canvasT.GetChild(0).GetChild(2).gameObject;
+        //button.SetActive(false);
         solved = false;
-        //canvas.SetActive(false); 
+        canvas.SetActive(false); 
 
-        canvas.GetComponent<CanvasGroup>().alpha = 0.0f;
+        //canvas.GetComponent<CanvasGroup>().alpha = 0.0f;
         //minGates = 3;
         string[,] items = new string[,]
         {
@@ -135,10 +136,15 @@ public class TableBehavior : MonoBehaviour
             else { Current.GetComponent<Image>().color = new Color32(255, 0, 0, 50); Debug.Log(resultText.GetComponent<Text>().text + " != " + result.GetComponent<Result>().value); }
             if (count == Rows)
             {
-                canvas = GameObject.Find("Score");
+                //canvas = GameObject.Find("Score");
+                canvas = GameObject.Find("Score Screen");
+                
+                canvas.SetActive(true);
                 canvasT = canvas.transform;
-                GameObject button = canvasT.GetChild(0).GetChild(2).gameObject;
-                button.SetActive(true);
+                Debug.Log("CHILDREN:    " + canvasT.childCount);
+                canvasT.GetChild(0).gameObject.SetActive(true);
+                //GameObject button = canvasT.GetChild(0).GetChild(2).gameObject;
+                //button.SetActive(true);
                 solved = true;
                 GameObject[] gates = FindGameObjectsWithTags(new string[] { "Gates And", "Gates Or", "Gates Not" });
                 Debug.Log("CHASE ADDED THIS");
@@ -147,10 +153,10 @@ public class TableBehavior : MonoBehaviour
                 //Debug.Log(minGates);
                 Debug.Log("Score: " + Math.Floor((float)minGates / gates.Length * 1000));
 
-                Text text = canvasT.GetChild(0).GetChild(1).gameObject.GetComponent<Text>();
+                Text text = canvasT.GetChild(0).GetChild(0).GetChild(1).gameObject.GetComponent<Text>();
                 text.text = "" + (Math.Floor((float)minGates / gates.Length * 1000)) + "/1000";
                 count = 0;
-                canvas.GetComponent<CanvasGroup>().alpha = 1f;
+                //canvas.GetComponent<CanvasGroup>().alpha = 1f;
                 //display(canvas,true);
             }
 
