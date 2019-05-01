@@ -24,7 +24,7 @@ public class HintManager : MonoBehaviour
     public void onClick(){
         hintText = GameObject.Find("Hint Text").GetComponent<Text>();
         
-        if(count < 4)
+        if(count < 3)
             count++;
         else
             count = 1;  
@@ -34,13 +34,13 @@ public class HintManager : MonoBehaviour
 
     private string hints(int i){
         if(i == 1){
-            return "This is the first hint."; 
+            return "Break the truth table down into smaller chunks by trying to create a solution one row at a time."; 
         } else if(i == 2){
-            return "This is the second hint."; 
+            return "A NOT gate will return a value opposite of it's input."; 
         } else if(i == 3){
-            return "This is the third hint."; 
+            return "The AND gate will return true only if all inputs are true."; 
         } else if(i == 4){
-            return "This is the fourth hint."; 
+            return "The OR gate will return true if any one of it's inputs are true."; 
         }
         else{
             return ""; 

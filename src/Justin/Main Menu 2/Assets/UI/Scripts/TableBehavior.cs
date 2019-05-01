@@ -14,6 +14,8 @@ public class TableBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //canvas.SetActive(false); 
+
         //minGates = 3;
         string[,] items = new string[,]
         {
