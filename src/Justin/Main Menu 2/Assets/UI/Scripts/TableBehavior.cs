@@ -27,24 +27,83 @@ public class TableBehavior : MonoBehaviour
         //GameObject button = canvasT.GetChild(0).GetChild(2).gameObject;
         //button.SetActive(false);
         solved = false;
-        canvas.SetActive(false); 
-
+        canvas.SetActive(false);
+        string[,] items = new string[0,0];
+        GameObject Level = GameObject.Find("Play Area" +
+                "/Text");
+        int lv = 0;
+        Debug.Log(Level.GetComponent<Text>().text);
+        switch (Level.GetComponent<Text>().text) {
+            case "LEVEL 1":
+                lv = 1;
+                break;
+            case "LEVEL 2":
+                lv = 2;
+                break;
+            case "LEVEL 3":
+                lv = 3;
+                break;
+            case "LEVEL 4":
+                lv = 4;
+                break;
+        }
+        Debug.Log(lv);
         //canvas.GetComponent<CanvasGroup>().alpha = 0.0f;
         //minGates = 3;
-        string[,] items = new string[,]
-        {
+        switch (lv){
+            case 1:
+                items = new string[,]
+                {
+            {"X","Y","A"},
+            {"T","T", "T"},
+            {"T","F", "F"},
+            {"F","T", "F"},
+            {"F","F", "F"}
+                };
+                break;
+            case 2:
+                items = new string[,]
+                {
+            {"X","Y","A"},
+            {"T","T", "T"},
+            {"T","F", "T"},
+            {"F","T", "T"},
+            {"F","F", "F"}
+                };
+                break;
+            case 3:
+                items = new string[,]
+                {
             {"X","Y","Z","A"},
-            {"F","F","F", "T"},
-            {"F","F","T", "F"},
-            {"F","T","F", "T"},
-            {"F","T","T", "F"},
-            {"T","F","F", "T"},
+            {"T","T","T", "F"},
+            {"T","T","F", "F"},           
             {"T","F","T", "F"},
-            {"T","T","F", "F"},
-            {"T","T","T", "F"}
-        };
-        int Variables = 3;
-        int Rows = 8;
+            {"T","F","F", "T"},
+            {"F","T","T", "F"},
+            {"F","T","F", "T"},
+            {"F","F","T", "F"},
+            {"F","F","F", "T"}
+                };
+                break;
+            case 4:
+            items = new string[,]
+            {
+            {"X","Y","Z","A"},
+            {"T","T","T", "F"},
+            {"T","T","F", "T"},
+            {"T","F","T", "F"},
+            {"T","F","F", "T"},
+            {"F","T","T", "F"},
+            {"F","T","F", "T"},
+            {"F","F","T", "F"},
+            {"F","F","F", "F"}
+            };
+            break;
+        }
+        int Variables = items.GetLength(1) - 1;
+        Debug.Log(Variables);
+        int Rows = items.GetLength(0) - 1;
+        Debug.Log(Rows);
         GameObject Header = GameObject.Find("TableHead");
         GameObject HeaderItem = GameObject.Find("TableItem(0)");
         GameObject TableArea = GameObject.Find("TableData");
@@ -91,11 +150,91 @@ public class TableBehavior : MonoBehaviour
         else { return false; }
     }
 
-    public void Check(int minGates)
+    public void Check(int min)
     {
-        int Rows = 8;
+
+        string[,] items = new string[0, 0];
+        GameObject Level = GameObject.Find("Play Area" +
+                "/Text");
+        int lv = 0;
+        int minGates = 0;
+        Debug.Log(Level.GetComponent<Text>().text);
+        switch (Level.GetComponent<Text>().text)
+        {
+            case "LEVEL 1":
+                lv = 1;
+                minGates = 1;
+                break;
+            case "LEVEL 2":
+                lv = 2;
+                minGates = 1;
+                break;
+            case "LEVEL 3":
+                lv = 3;
+                minGates = 3;
+                break;
+            case "LEVEL 4":
+                lv = 4;
+                minGates = 4;
+                break;
+        }
+        Debug.Log(lv);
+        switch (lv)
+        {
+            case 1:
+                items = new string[,]
+                {
+            {"X","Y","A"},
+            {"T","T", "T"},
+            {"T","F", "F"},
+            {"F","T", "F"},
+            {"F","F", "F"}
+                };
+                break;
+            case 2:
+                items = new string[,]
+                {
+            {"X","Y","A"},
+            {"T","T", "T"},
+            {"T","F", "T"},
+            {"F","T", "T"},
+            {"T","T", "F"}
+                };
+                break;
+            case 3:
+                items = new string[,]
+                {
+            {"X","Y","Z","A"},
+            {"F","F","F", "T"},
+            {"F","F","T", "F"},
+            {"F","T","F", "T"},
+            {"F","T","T", "F"},
+            {"T","F","F", "T"},
+            {"T","F","T", "F"},
+            {"T","T","F", "F"},
+            {"T","T","T", "F"}
+                };
+                break;
+            case 4:
+                items = new string[,]
+                {
+            {"X","Y","Z","A"},
+            {"T","T","T", "F"},
+            {"T","T","F", "T"},
+            {"T","F","T", "F"},
+            {"T","F","F", "T"},
+            {"F","T","T", "F"},
+            {"F","T","F", "T"},
+            {"F","F","T", "F"},
+            {"F","F","F", "F"}
+                };
+                break;
+        }
+        int Variable = items.GetLength(1) - 1;
+        Debug.Log(Variable);
+        int Rows = items.GetLength(0) - 1;
+        Debug.Log(Rows);
         int count = 0;
-        int Variable = 3;
         GameObject inputx = GameObject.Find("Input X");
         GameObject inputy = GameObject.Find("Input Y");
         GameObject inputz = GameObject.Find("Input Z");
@@ -122,8 +261,11 @@ public class TableBehavior : MonoBehaviour
             Debug.Log("X value Set to " + StringtoBool(Xval.GetComponent<Text>().text));
             inputy.GetComponent<TestPositiveInput>().setValue(StringtoBool(Yval.GetComponent<Text>().text));
             Debug.Log("Y value Set to " + StringtoBool(Yval.GetComponent<Text>().text));
-            inputz.GetComponent<TestPositiveInput>().setValue(StringtoBool(Zval.GetComponent<Text>().text));
-            Debug.Log("Z value Set to " + StringtoBool(Zval.GetComponent<Text>().text));
+            if (Variable >= 3)
+            {
+                inputz.GetComponent<TestPositiveInput>().setValue(StringtoBool(Zval.GetComponent<Text>().text));
+                Debug.Log("Z value Set to " + StringtoBool(Zval.GetComponent<Text>().text));
+            }
             Debug.Log("RESULTTEXT Row " + i + ": " + StringtoBool(resultText.GetComponent<Text>().text));
             Debug.Log("RESULT Row " + i + ": " + result.GetComponent<Result>().value);
 
@@ -163,8 +305,10 @@ public class TableBehavior : MonoBehaviour
             //Reset Gate Values for next loop
             inputx.GetComponent<TestPositiveInput>().onReset();
             inputy.GetComponent<TestPositiveInput>().onReset();
-            inputz.GetComponent<TestPositiveInput>().onReset();
-
+            if (Variable >= 3)
+            {
+                inputz.GetComponent<TestPositiveInput>().onReset();
+            }
         }
 
 
