@@ -7185,9 +7185,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'LEVEL 1
-
-'
+  m_Text: LEVEL 1
 --- !u!222 &2100047992
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7411,7 +7409,7 @@ PrefabInstance:
     - target: {fileID: 5447609200044067220, guid: 5ee4c1bdbfbfdc5408f1800f18185495,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 45.700005
+      value: 45.700012
       objectReference: {fileID: 0}
     - target: {fileID: 3540401113824210183, guid: 5ee4c1bdbfbfdc5408f1800f18185495,
         type: 3}
