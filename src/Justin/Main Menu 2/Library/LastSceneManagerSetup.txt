@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/UI/Scenes/WiredTruthPlayArea Level2.unity
+- path: Assets/UI/Scenes/Wired Truth START.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
