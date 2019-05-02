@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/UI/Scenes/Wired Truth.unity
     guid: b4d9a63b0cb4c440d9f3b5f481b4b74a
   - enabled: 1
-    path: Assets/UI/Scenes/WiredTruthPlayArea.unity
+    path: Assets/UI/Scenes/WiredTruthPlayArea Level4.unity
     guid: f0ef028a90e5c664c820da5a1fc38f34
   - enabled: 1
     path: Assets/UI/Scenes/Level Select.unity
